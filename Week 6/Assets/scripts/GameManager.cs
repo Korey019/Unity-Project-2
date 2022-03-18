@@ -33,8 +33,10 @@ public class GameManager : MonoBehaviour
             switch (gState)
             {
                 case GameState.prep:
-                    Debug.Log("Preparing...");
+                    message = "Preparing...";
+                    Debug.Log(message);
                     textBox.NewMessage(message);
+
                     StartCoroutine(TransitionTimer(2f, GameState.pick));
                     break;
                 case GameState.pick:
@@ -57,8 +59,8 @@ public class GameManager : MonoBehaviour
                     }
                     else
                     {
-                        message = false "Fighting";
-                        Start Coroutine(TransitionTimer(2f, GameState.fight));
+                        message = "Fighting";
+                        StartCoroutine(TransitionTimer(2f, GameState.fight));
                     }
                     Debug.Log(message);
                     textBox.NewMessage(message);
