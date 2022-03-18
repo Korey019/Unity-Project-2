@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    //Enumbs can be anything, use your imagination!
     public enum GameState
     {
         prep,
@@ -12,23 +13,20 @@ public class GameManager : MonoBehaviour
         result,
         victory
     }
+    //using our enum as the variable TYPE we can create a variable to track our gameState
     public GameState gState;
     public GameObject prefab;
     public TextBox textBox;
     private string message;
     private bool simulate = true;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
+        //don't run this every frame
         if (simulate)
         {
+            //stop it so we can see each step and it's not running multiple times
             simulate = false;
             switch (gState)
             {
@@ -36,11 +34,11 @@ public class GameManager : MonoBehaviour
                     message = "Preparing...";
                     Debug.Log(message);
                     textBox.NewMessage(message);
-
                     StartCoroutine(TransitionTimer(2f, GameState.pick));
                     break;
                 case GameState.pick:
-                    Debug.Log("Picking fighters");
+                    message = "Picking fighters";
+                    Debug.Log(message);
                     textBox.NewMessage(message);
                     StartCoroutine(TransitionTimer(2f, GameState.fight));
                     break;
@@ -66,12 +64,14 @@ public class GameManager : MonoBehaviour
                     textBox.NewMessage(message);
                     break;
                 case GameState.result:
-                    Debug.Log("Results are in!");
+                    message = "Results are in!";
+                        Debug.Log(message);
                     textBox.NewMessage(message);
                     StartCoroutine(TransitionTimer(2f, GameState.victory));
                     break;
                 case GameState.victory:
-                    Debug.Log("And the winner is...");
+                    message = "And the winner is...";
+                    Debug.Log(message);
                     textBox.NewMessage(message);
                     break;
             }
@@ -80,8 +80,11 @@ public class GameManager : MonoBehaviour
 
     IEnumerator TransitionTimer(float delay, GameState newState)
     {
+        //the timer takes in a delay, and what state we want to switch to
         yield return new WaitForSeconds(delay);
+        //set our new state
         gState = newState;
+        //let our code run again in Update
         simulate = true;
     }
 }
