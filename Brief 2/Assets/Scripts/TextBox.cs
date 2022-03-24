@@ -33,6 +33,6 @@ public class TextBox : MonoBehaviour
             curText += textLines[i];
         }
         //now set the text variable on our textbox to display our text
-        textComp.textComp = curText;
+        textComp.text = curText;
     }
 }
