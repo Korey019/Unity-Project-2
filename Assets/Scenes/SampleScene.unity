@@ -134,6 +134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 481340188}
   - component: {fileID: 481340187}
+  - component: {fileID: 481340189}
   m_Layer: 0
   m_Name: BattleManager
   m_TagString: Untagged
@@ -180,6 +181,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &481340189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481340186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de3cd6d8f32b82248871a1346d6a63cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 618550877212315688, guid: a1062b8463ac5eb4e9371d176c9ddb4d, type: 3}
+  amountToSpawn: 6
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

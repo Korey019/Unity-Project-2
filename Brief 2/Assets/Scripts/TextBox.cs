@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class TextBox : MonoBehaviour
 {
-        public TextBox textComp;
+        public Text textComp;
         private string curText;
         public List<string> textLines;
     
     // Start is called before the first frame update
     void Start()
     {
-        textComp = GetComponent<TextBox>();
+        textComp = GetComponent<Text>();
     }
 
     public void NewMessage(string message)
