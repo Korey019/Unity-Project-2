@@ -22,6 +22,12 @@ public class Asteroid : MonoBehaviour
         Destroy.GameObject(Asteroid);
     }
 
-
-
+    void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.name == "Rocket")
+        {
+            Destroy.GameObject(Asteroid);
+            print("Asteroid Destroyed!");
+        }
+    }
 }

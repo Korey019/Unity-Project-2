@@ -6,7 +6,7 @@ public class ExplosionControl : MonoBehaviour
 {
 
     public GameObject explosion;
-
+    public int PlayParticle;
 
     void OnEnable()
     {

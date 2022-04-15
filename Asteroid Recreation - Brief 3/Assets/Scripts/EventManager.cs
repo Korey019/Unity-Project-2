@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EventManager : MonoBehaviour
 {
-
     public delegate void CollisionAction(Vector3 impactPosition);
     public static event CollisionAction OnImpact;
 
